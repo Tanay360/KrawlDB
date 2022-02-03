@@ -139,6 +139,6 @@ db.deleteDatabase(object : KrawlDB.OnTaskDoneListener {
 )
 ```
 
-> Please note that all functions given above are called only after one is executed! To call them before all tasks are done, just add the word sync after every function name
+> Please note that all functions given above are called only after all tasks are executed! To call them before all tasks are done, just add the word sync after every function name
 
 You can check out an example as well in the app directory of this repository although it is not documented.
