@@ -3,7 +3,7 @@
 
 > KrawlDB is a nosql json database library which has a livedata prebuilt containing the elements from the database which you can observe on the main thread
 
-> Add the dependency for KrawlDB:
+Add the dependency for KrawlDB:
 
 In your root gradle file add:
 ```groovy
