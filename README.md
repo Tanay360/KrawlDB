@@ -7,19 +7,19 @@ Add the dependency for KrawlDB:
 
 In your root gradle file add:
 ```groovy
-	allprojects {
-		repositories {
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
 In your app module add:
 ```groovy
-	dependencies {
-        // Replace $krawldb_version with the version in the release
-	    implementation "com.github.Tanay360:KrawlDB:$krawldb_version"
-	}
+dependencies {
+    // Replace $krawldb_version with the version in the release
+    implementation "com.github.Tanay360:KrawlDB:$krawldb_version"
+}
 ```
 
 ## To get started follow the steps below
