@@ -1,6 +1,26 @@
+[![](https://jitpack.io/v/Tanay360/KrawlDB.svg)](https://jitpack.io/#Tanay360/KrawlDB)
 # KrawlDB
 
 > KrawlDB is a nosql json database library which has a livedata prebuilt containing the elements from the database which you can observe on the main thread
+
+> Add the dependency for KrawlDB:
+
+In your root gradle file add:
+```groovy
+	allprojects {
+		repositories {
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+In your app module add:
+```groovy
+	dependencies {
+        // Replace $krawldb_version with the version in the release
+	    implementation "com.github.Tanay360:KrawlDB:$krawldb_version"
+	}
+```
 
 ## To get started follow the steps below
 
@@ -14,7 +34,7 @@ val db = KrawlDB.getDB<YourEntity>(context, lifecycleOwner, YourEntity::class)
 
 > If you are using compose, add the following dependencies to your app/build.gradle file
 
-```gradle
+```groovy
 implementation 'androidx.compose.runtime:runtime-livedata:1.2.0-alpha01'
 implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0"
 ```
