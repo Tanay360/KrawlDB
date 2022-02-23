@@ -1,6 +1,5 @@
 package com.hiddendev.krawldbsample
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -29,13 +28,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.hiddendev.krawldbsample.ui.theme.KrawlDBTheme
 import com.tanay.krawldb.KrawlDB
-import com.tanay.krawldb.OnTaskCompletedListener
-import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,10 +47,8 @@ class MainActivity : ComponentActivity() {
 }
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalAnimationApi::class)
-@SuppressLint("CoroutineCreationDuringComposition")
 @Composable
 fun MainApp() {
-    val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     var showAddorEditWordEntityDialog by remember {
@@ -69,7 +63,7 @@ fun MainApp() {
     var db by remember {
         mutableStateOf(null as KrawlDB<WordEntity>?)
     }
-    coroutineScope.launch {
+    LaunchedEffect(key1 = true) {
         db = KrawlDB.getDB(context, lifecycleOwner, WordEntity::class)
     }
     Scaffold(
